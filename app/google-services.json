@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "715279424255",
+    "project_id": "manager-1ddc7",
+    "storage_bucket": "manager-1ddc7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715279424255:android:5806f3b28e1580e4fdcaca",
+        "android_client_info": {
+          "package_name": "com.example.manager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUIyAWCWXG2Q6QisXxpTdaRngCB_MYtss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
