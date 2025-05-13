@@ -802,7 +802,7 @@ fun HouseCard(
             Text("Size: ${house.housesize}", fontWeight = FontWeight.Bold, fontSize = 16.sp)
             Text("Price: ${house.houseprice}", color = Color(0xFF388E3C), fontSize = 14.sp)
             Text("Location: ${house.houselocation}", fontSize = 14.sp)
-            Text("house id: ${house.desc}", fontSize = 13.sp, maxLines = 2)
+            Text("desc: ${house.desc}", fontSize = 13.sp, maxLines = 2)
 
             Spacer(modifier = Modifier.height(8.dp))
 
@@ -817,9 +817,9 @@ fun HouseCard(
                 ActionButton("Book", MaterialTheme.colorScheme.primary) {
                     navController.navigate("book_house/${house.houseId}")
                 }
-                ActionButton("Update", Color(0xFF43A047)) {
-                    navController.navigate("$ROUTE_UPDATE_HOUSES/${house.houseId}")
-                }
+//                ActionButton("Update", Color(0xFF43A047)) {
+//                    navController.navigate("$ROUTE_UPDATE_HOUSES/${house.houseId}")
+//                }
             }
         }
     }

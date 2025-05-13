@@ -27,6 +27,7 @@ import com.example.manager.R
 import com.example.manager.navigation.ROUTE_ADD_HOUSES
 import com.example.manager.navigation.ROUTE_BOOKED_HOUSE
 import com.example.manager.navigation.ROUTE_BOOK_HOUSE
+import com.example.manager.navigation.ROUTE_SPLASH
 import com.example.manager.navigation.ROUTE_VIEW_HOUSES
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -35,19 +36,14 @@ fun DashboardScreen(navController: NavController) {
     val selectedItem = remember { mutableStateOf(0) }
     val context = LocalContext.current
 
+
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text("Rental") },
                 navigationIcon = {
-                    IconButton(onClick = {}) {
-                        Icon(Icons.Filled.Menu, contentDescription = "Menu")
-                    }
-                },
-                actions = {
-                    IconButton(onClick = {}) { Icon(Icons.Filled.Person, contentDescription = "Profile") }
-                    IconButton(onClick = {}) { Icon(Icons.Filled.Search, contentDescription = "Search") }
-                    IconButton(onClick = {}) { Icon(Icons.Filled.Close, contentDescription = "Logout") }
+//                    IconButton(onClick = {}) { Icon(Icons.Filled.Search, contentDescription = "Search") }
+                    IconButton(onClick = { navController.navigate(ROUTE_SPLASH)}) { Icon(Icons.Filled.Close, contentDescription = "CLOSE APP") }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color(0xFF1976D2),

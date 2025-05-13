@@ -20,6 +20,7 @@ import com.google.firebase.database.*
 data class BookedHouse(
     val key: String = "",
     val userName: String = "",
+    val usercontact:String="",
     val houseId: String = "",
     val timestamp: Long = 0L,
     val houseDetails: Map<String, Any>? = null
@@ -38,10 +39,11 @@ fun BookedHousesScreen(navController: NavController) {
                 for (child in snapshot.children) {
                     val key = child.key ?: continue
                     val userName = child.child("userName").getValue(String::class.java) ?: ""
+                    val usercontact = child.child("usercontact").getValue(String::class.java) ?: ""
                     val houseId = child.child("houseId").getValue(String::class.java) ?: ""
                     val timestamp = child.child("timestamp").getValue(Long::class.java) ?: 0L
                     val houseDetails = child.child("houseDetails").value as? Map<String, Any>
-                    bookedHouses.add(BookedHouse(key, userName, houseId, timestamp, houseDetails))
+                    bookedHouses.add(BookedHouse(key, userName, houseId,usercontact ,timestamp, houseDetails))
                 }
             }
 
@@ -69,7 +71,8 @@ fun BookedHousesScreen(navController: NavController) {
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
                         Text("User: ${booked.userName}", style = MaterialTheme.typography.titleMedium)
-                        Text("House ID: ${booked.houseId}")
+                        Text("contact: ${booked.houseId}")
+                        Text("house Id: ${booked.usercontact}", style = MaterialTheme.typography.titleMedium)
 
                         booked.houseDetails?.let { details ->
                             Text("Details:", style = MaterialTheme.typography.titleSmall)

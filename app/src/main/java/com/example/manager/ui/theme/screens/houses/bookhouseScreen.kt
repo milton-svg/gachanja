@@ -92,6 +92,7 @@ import com.google.firebase.database.FirebaseDatabase
 fun HouseBookingScreen(navController: NavController, houseId: String) {
     val context = LocalContext.current
     var userName by remember { mutableStateOf("") }
+    var usercontact by remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier
@@ -108,6 +109,12 @@ fun HouseBookingScreen(navController: NavController, houseId: String) {
             value = userName,
             onValueChange = { userName = it },
             label = { Text("Your Name") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        OutlinedTextField(
+            value = usercontact,
+            onValueChange = { usercontact = it },
+            label = { Text("Your Phone number") },
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -129,6 +136,7 @@ fun HouseBookingScreen(navController: NavController, houseId: String) {
                             val houseData = snapshot.value
                             val booking = mapOf(
                                 "userName" to userName,
+                                "usercontact" to usercontact,
                                 "houseId" to houseId,
                                 "timestamp" to System.currentTimeMillis(),
                                 "houseDetails" to houseData

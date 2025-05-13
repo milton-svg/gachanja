@@ -115,21 +115,21 @@ fun AddhouseScreen(navController: NavController) {
         OutlinedTextField(
             value = houseId,
             onValueChange = { houseId = it },
-            label = { Text("House id") },
-            placeholder = { Text("Please enter house Id") },
+            label = { Text("House description") },
+            placeholder = { Text("Please enter house description") },
             modifier = Modifier.fillMaxWidth()
         )
 
-        OutlinedTextField(
-            value = desc,
-            onValueChange = { desc = it },
-            label = { Text("Brief description") },
-            placeholder = { Text("Please enter house description") },
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(150.dp),
-            singleLine = false
-        )
+//        OutlinedTextField(
+//            value = desc,
+//            onValueChange = { desc = it },
+//            label = { Text("Brief description") },
+//            placeholder = { Text("Please enter house description") },
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .height(150.dp),
+//            singleLine = false
+//        )
 
         Row(
             modifier = Modifier.fillMaxWidth(),
